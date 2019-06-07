@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xargs -n1 -I {} grep -H -m1 "date:" {} | sed s/\.md:date://g | awk '{print "- *"$2"* ["$1"](./"$1")"}' | sort -r

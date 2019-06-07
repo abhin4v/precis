@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+
+  <base href="{{ site.base_url }}/">
+
+  <link rel="stylesheet" href="https://unpkg.com/remarkdown.css/dist/remarkdown.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+</head>
+<body class="remarkdown h1-underline h2-underline">
+  <div class="container">
+    <header>
+      <span><a href="./">{{ site.name }}</a></span>
+      <form action="{{ site.repo_url }}/search" method="get" style="float: right">
+        <input type="text" name="q" placeholder="Search">
+      </form>
+    </header>
+    <section style="margin-top: 1em; color: #999;">
+    {% if page.date %}<span class="date">{{ page.date }}</span>{% endif %}
+    {% if page.tags %}
+    {% assign tags = page.tags | split:' ' %}
+    <ul class="tags">
+      {% for tag in tags %}
+      <li><a href="./{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.date %}
+      <a style="float: right" href="{{ site.repo_url }}/edit/master/{{ page.name }}">Edit</a>
+    {% endif %}
+    </section>
+    <section>
+      {{ content }}
+    </section>
+  </div>
+</body>
+</html>
+

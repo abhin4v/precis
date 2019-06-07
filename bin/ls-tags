@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git ls-files *.md | grep -v README | xargs -n1 -I {} grep -m1 "tags:" {} | sed s/tags:\ //g | tr ' ' '\n' | sort -u

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+TAGS=`bin/ls-tags`
+echo "Tags found:\n$TAGS\n"
+
+# add tags to README
+echo "Adding tags to README"
+echo "## Tags\n" > README.md
+echo "$TAGS" | awk '{print "- ["$1"](./"$1")"}' >> README.md
+
+# add notes list to README
+echo "Adding notes list to README"
+echo "\n## Notes\n" >> README.md
+git ls-files *.md | grep -v README | bin/mk-index >> README.md
+
+# generate notes list per tag
+echo "Generating notes list per tag"
+echo "$TAGS" | xargs -n1 -I{} sh -c "echo \"# {}\n\" > {}.md"
+echo "$TAGS" | xargs -n1 -I{} sh -c "git grep --name-only \"tags: .*{}\" | bin/mk-index >> {}.md"
+
+# add README to git
+echo "Adding README to git"
+git add README.md
+
+# add tag files to git
+echo "Adding tag files to git"
+echo "$TAGS" | xargs -n1 -I{} git add {}.md
+
+echo "Done"
