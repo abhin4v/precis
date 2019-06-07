@@ -11,7 +11,7 @@ echo "$TAGS" | awk '{print "- ["$1"](./"$1")"}' >> README.md
 # add notes list to README
 echo "Adding notes list to README"
 echo "\n## Notes\n" >> README.md
-git ls-files *.md | grep -v README | bin/mk-index >> README.md
+git ls-files '*.md' '*.markdown' | grep -v README | bin/mk-index >> README.md
 
 # generate notes list per tag
 echo "Generating notes list per tag"
