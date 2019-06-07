@@ -3,4 +3,8 @@ date: 2019-06-07
 tags: documentation
 ---
 
-This is the intro.
+# Precis
+
+Precis is a minimal note taking web-app built over [Github Pages].
+
+[Github Pages]: https://pages.github.com/
