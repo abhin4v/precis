@@ -1,11 +1,15 @@
 #!/bin/sh
 
+NAME=`cat _config.yml | grep name | cut -c 7-`
+echo "Building site for $NAME"
+
 TAGS=`bin/ls-tags`
 echo "Tags found:\n$TAGS\n"
 
 # add tags to README
 echo "Adding tags to README"
-echo "## Tags\n" > README.md
+echo "# $NAME\n" > README.md
+echo "## Tags\n" >> README.md
 echo "$TAGS" | awk '{print "- ["$1"](./"$1")"}' >> README.md
 
 # add notes list to README
