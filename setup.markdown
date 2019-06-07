@@ -25,7 +25,7 @@ Most of these commands are installed by default. Otherwise, please install them 
 
 ## Installation
 
-- Fork or clone this repo from Github.
+- Fork or clone [this repo](https://github.com/abhin4v/precis) from Github.
 - Delete all the markdown files:
 ```shell
 $ rm *.md *.markdown
@@ -40,12 +40,12 @@ $ rm *.md *.markdown
 bin/mk-site
 ```
 - Modify `_config.yml` file with correct values as per your setup.
-- Write notes in Markdown in the root directory of your repo. Upon commiting the files in git, home page and tag pages will be auto-generated.
+- Write notes in Markdown in the root directory of your repo. Upon committing the files in git, home page and tag pages will be auto-generated.
 - Push to Github and wait for few minutes for the notes to be published.
 
 ## Notes Format
 
-You can use [Github flavoured Markdown] to write your notes. You can add date and tags to the notes using the Markdown frontmatter format.
+You can use [Github flavoured Markdown] to write your notes. You can add date and tags to the notes using the Markdown front-matter format.
 
 A sample note:
 
@@ -60,5 +60,7 @@ tags: meeting office
 - need to do things
 - need to do more things
 ```
+
+See [this demo note](./demo-note) to get a look and feel.
 
 [Github flavoured Markdown]: https://guides.github.com/features/mastering-markdown/
