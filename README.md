@@ -6,5 +6,5 @@
 
 ## Notes
 
-- *2019-06-07* [setup](./setup)
-- *2019-06-06* [introduction](./introduction)
+- *2019-06-07* [introduction](./introduction)
+- *2019-06-06* [setup](./setup)
