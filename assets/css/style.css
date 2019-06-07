@@ -61,6 +61,10 @@ input[type="search"]:focus {
   width: calc(80vw - 200px);
 }
 
+footer {
+  font-size: smaller;
+}
+
 .remarkdown h1 {
   font-weight: bold;
   font-size: larger;
