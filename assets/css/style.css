@@ -47,7 +47,7 @@ article time {
   text-align: right;
 }
 
-input[type="text"] {
+input[type="search"] {
   border: 1px solid #777;
   font-family: inherit;
   font-size: smaller;
@@ -56,7 +56,7 @@ input[type="text"] {
   max-width: 350px;
 }
 
-input[type="text"]:focus {
+input[type="search"]:focus {
   border: 1px solid #a0f;
   width: calc(80vw - 200px);
 }
