@@ -1,3 +1,8 @@
+# the base URL of your notes Github pages website
 base_url: https://abhin4v.github.io/gh-notes
+
+# the URL of your notes Github repo
 repo_url: https://github.com/abhin4v/gh-notes
+
+# the name for your notes website
 name: Precis

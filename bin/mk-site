@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME=`cat _config.yml | grep name | cut -c 7-`
+NAME=`cat _config.yml | grep 'name:' | cut -c 7-`
 echo "Building site for $NAME"
 
 TAGS=`bin/ls-tags`
