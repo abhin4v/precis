@@ -7,13 +7,12 @@ tags: documentation
 
 ## Requirements
 
-You should have the following commands installed on the computer you want to take notes on:
+Precis has no dependencies other than *git* and these basic *nix commands:
 
 - awk
 - cat
 - cut
 - echo
-- git
 - grep
 - sed
 - sh
