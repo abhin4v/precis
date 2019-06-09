@@ -43,7 +43,7 @@
     {% assign tags = page.tags | split:' ' %}
     <ul class="tags">
       {% for tag in tags %}
-      <li><a href="./{{ tag }}">{{ tag }}</a></li>
+      <li><a href="./tags/{{ tag }}">{{ tag }}</a></li>
       {% endfor %}
     </ul>
     {% endif %}
