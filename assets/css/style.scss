@@ -1,18 +1,26 @@
 ---
 ---
 
+$link-color: #a0f;
+$bg-color: #fdfdfd;
+
 body.remarkdown {
   font-family: Inconsolata, Menlo, Monaco, "DejaVu Sans Mono", Consolas, monospace;
   font-size: 18px;
   background: #eee;
   color: #333;
   min-width: 380px;
+
+  ::before, ::after {
+    opacity: .6;
+    color: #205080;
+  }
   
   .container {
     max-width: 700px;
     padding: 10px;
     margin: auto;
-    background: #fdfdfd;
+    background: $bg-color;
     border: 1px solid #ddd;
     @media (min-width: 300px) {
       padding: 20px 20px;
@@ -37,10 +45,14 @@ body.remarkdown {
     color: #999;
   }
   a {
-    color: #a0f;
+    color: $link-color;
     text-decoration: none;
     code {
       color: inherit;
+    }
+    &:active, &:focus {
+      color: $bg-color;
+      background-color: $link-color;
     }
     &:hover {
       border-bottom: 1px solid;
@@ -63,13 +75,13 @@ body.remarkdown {
       li {
         display: inline;
         list-style: none;
-        background-color: #c756ff;
+        background-color: lighten($color: $link-color, $amount: 20%);
         padding: 0.2em 0.3em;
         &::before {
           content: '';
         }
         a {
-          color: #fff;
+          color: $bg-color;
           &::after, &::before {
             content: '';
           }
@@ -106,7 +118,7 @@ body.remarkdown {
     min-width: 150px;
     max-width: 350px;
     &:focus {
-      border: 1px solid #a0f;
+      border: 1px solid $link-color;
       width: calc(80vw - 200px);
     }
   }
