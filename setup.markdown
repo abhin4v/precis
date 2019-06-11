@@ -28,7 +28,7 @@ Most of these commands are installed by default. Otherwise, please install them 
 - Delete all the markdown files:
 
 ```shell
-$ rm *.md *.markdown
+$ rm *.md *.markdown tags/*.md
 ```
 
 - Push to your own repo on Github.
