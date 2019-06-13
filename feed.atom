@@ -1,0 +1,33 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.name }}</title>
+  <link href="{{ site.base_url }}/feed.atom" rel="self" />
+  <link href="{{ site.base_url }}" />
+  <id>{{ site.base_url }}/feed.atom</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>{{ site.github.owner.name or site.github.owner_name }}</name>
+    <uri>{{ site.github.owner.blog or site.github.owner_url }}</uri>
+  </author>
+  {% for page in site.pages %}
+    {% assign page_ext = page.name | split: "." | last | downcase %}
+    {% if page_ext == "md" or page_ext == "markdown" %}
+    {% if page.dir != "/tags/" and page.url != "/" %}
+    <entry>
+      <title>{{ page.title }}</title>
+      <link rel="alternate" href="{{ site.base_url }}{{ page.url | split: '.' | first }}" />
+      <id>{{ site.base_url }}{{ page.url | split: "." | first }}</id>
+      <published>{{ page.date | date_to_xmlschema }}</published>
+      <updated>{{ page.date | date_to_xmlschema }}</updated>
+      {% if page.tags %}
+      {% assign tags = page.tags | split:' ' %}
+      {% for tag in tags %}<category term="{{ tag }}" />{% endfor %}
+      {% endif %}
+    </entry>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+</feed>
