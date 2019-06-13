@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    {% assign page_ext = page.name | split: "." | last | downcase %}
+    {% if page_ext == "md" or page_ext == "markdown" %}
+      <url>
+        <loc>{{ site.url }}{{ page.url | split: "." | first }}</loc>
+        <lastmod>
+        {% if page.date %}
+          {{ page.date | date_to_xmlschema }}
+        {% else %}
+          {{ site.time | date_to_xmlschema }}
+        {% endif %}
+        </lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+      </url>
+    {% endif %}
+  {% endfor %}
+</urlset>
