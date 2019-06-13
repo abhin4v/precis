@@ -45,12 +45,6 @@ bin/mk-site
 - Modify `_config.yml` file with correct values as per your setup:
 
 ```yaml
-# the base URL of your notes Github pages website
-base_url: https://abhin4v.github.io/precis
-
-# the URL of your notes Github repo
-repo_url: https://github.com/abhin4v/precis
-
 # the name for your notes website
 name: Precis
 

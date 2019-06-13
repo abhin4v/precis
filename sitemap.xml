@@ -9,7 +9,7 @@ layout: null
     {% assign page_ext = page.name | split: "." | last | downcase %}
     {% if page_ext == "md" or page_ext == "markdown" %}
       <url>
-        <loc>{{ site.base_url }}{{ page.url | split: "." | first }}</loc>
+        <loc>{{ site.github.url }}{{ page.url | split: "." | first }}</loc>
         <lastmod>
         {% if page.date %}
           {{ page.date | date_to_xmlschema }}

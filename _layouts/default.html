@@ -9,7 +9,7 @@
 
   <title>{% if page.path != 'README.md' %}{{ page.title }} | {% endif %}{{ site.name }}</title>
 
-  <base href="{{ site.base_url }}/">
+  <base href="{{ site.github.url }}/">
 
   <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="feed.atom">
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
@@ -36,7 +36,7 @@
   <div class="container">
     <header>
       <span><a href="./">{{ site.name }}</a></span>
-      <form action="{{ site.repo_url }}/search" method="get" style="float: right">
+      <form action="{{ site.github.repository_url }}/search" method="get" style="float: right">
         <input type="search" name="q" placeholder="Search">
         <input type="hidden" name="l" value="Markdown" style="display:none">
       </form>
@@ -52,7 +52,7 @@
     </ul>
     {% endif %}
     {% if page.date %}
-      <a style="float: right" href="{{ site.repo_url }}/edit/master/{{ page.path }}">Edit</a>
+      <a style="float: right" href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">Edit</a>
     {% endif %}
     </section>
     <section>
