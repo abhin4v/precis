@@ -17,13 +17,13 @@ echo "$TAGS" | awk '{print "- ["$1"](./tags/"$1")"}' >> README.md
 # add notes list to README
 echo "Adding notes list to README"
 echo "\n## Notes\n" >> README.md
-git ls-files '*.md' '*.markdown' | grep -v README | bin/mk-index >> README.md
+git ls-files '*.md' '*.markdown' | grep -v README | grep -v "tags/" | bin/mk-index >> README.md
 
 # generate notes list per tag
 echo "Generating notes list per tag"
 mkdir -p tags
 echo "$TAGS" | xargs -n1 -I{} sh -c "echo \"# {}\n\" > tags/{}.md"
-echo "$TAGS" | xargs -n1 -I{} sh -c "git grep --name-only \"tags: .*{}\" | bin/mk-index >> tags/{}.md"
+echo "$TAGS" | xargs -n1 -I{} sh -c "git grep --name-only 'tags: .*{}' -- '*.md' '*.markdown' | bin/mk-index >> tags/{}.md"
 
 # add README to git
 echo "Adding README to git"
