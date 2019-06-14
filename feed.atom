@@ -17,10 +17,11 @@ layout: null
     {% if page_ext == "md" or page_ext == "markdown" %}
     {% if page.dir != "/tags/" and page.url != "/" %}
     <entry>
-      <title>{{ page.title }}</title>
+      <title>{{ page.title | xml_escape }}</title>
       <link rel="alternate" href="{{ site.github.url }}{{ page.url | split: '.' | first }}" />
       <id>{{ site.github.url }}{{ page.url | split: "." | first }}</id>
       <published>{{ page.date | date_to_xmlschema }}</published>
+      <summary type="html">{{ page.content | split: '.' | first | append: '.' | markdownify | xml_escape }}</summary>
       <updated>{{ page.date | date_to_xmlschema }}</updated>
       {% if page.tags %}
       {% assign tags = page.tags | split:' ' %}
