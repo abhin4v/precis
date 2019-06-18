@@ -21,6 +21,7 @@ git ls-files '*.md' '*.markdown' | grep -v README | grep -v "tags/" | bin/mk-ind
 
 # generate notes list per tag
 echo "Generating notes list per tag"
+git rm -f 'tags/*.md'
 mkdir -p tags
 echo "$TAGS" | xargs -n1 -I{} sh -c "echo \"# {}\n\" > tags/{}.md"
 echo "$TAGS" | xargs -n1 -I{} sh -c "git grep --name-only 'tags: .*{}' -- '*.md' '*.markdown' | bin/mk-index >> tags/{}.md"
