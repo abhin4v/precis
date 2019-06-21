@@ -29,6 +29,10 @@ body.remarkdown {
       padding: 40px 80px;
     }
   }
+
+  main > p > img {
+    width: 100%;
+  }
   
   h1 {
     font-weight: bold;
