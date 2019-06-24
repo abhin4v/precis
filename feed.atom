@@ -21,7 +21,7 @@ layout: null
       <link rel="alternate" href="{{ site.github.url }}{{ page.url | split: '.' | first }}" />
       <id>{{ site.github.url }}{{ page.url | split: "." | first }}</id>
       <published>{{ page.date | date_to_xmlschema }}</published>
-      <summary type="html">{{ page.content | split: '.' | first | append: '.' | markdownify | xml_escape }}</summary>
+      <summary type="html">{{ page.content | markdownify | xml_escape }}</summary>
       <updated>{{ page.date | date_to_xmlschema }}</updated>
       {% if page.tags %}
       {% assign tags = page.tags | split:' ' %}
