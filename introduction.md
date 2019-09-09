@@ -17,6 +17,7 @@ Precis is a minimal note taking web-app built over Github Pages.
 - Do full-text search of your notes.
 - Syntax highlighting for code using [rouge].
 - Minimal responsive styling using [ReMarkdown.css].
+- Dark mode support.
 - Automatic Sitemap and Atom feed generation for notes.
 - No dependencies other than basic *nix commands.
 - Free public hosting using [Github Pages].
@@ -27,7 +28,6 @@ See [setup](./setup) for setup instructions.
 
 - <https://notes.abhinavsarkar.net/>
 - <https://toff63.github.io/notepad/>
-- <https://tjadowski.github.io/notes/>
 
 [Github Pages]: https://pages.github.com/
 [ReMarkdown.css]: https://fvsch.com/remarkdown/
